@@ -1,61 +1,66 @@
 # Predict Bike Sharing Demand with AutoGluon
 
-## Introduction to AWS Machine Learning Final Project
+## Project Overview
 
-## Overview
-In this project, students will apply the knowledge and methods they learned in the Introduction to Machine Learning course to compete in a Kaggle competition using the AutoGluon library.
+In this project, I have participated in the **Kaggle Bike Sharing Demand Competition**. The objective was to predict the demand for bike rentals in a city based on a variety of factors such as the weather, the time of day, the season, and more. To achieve this, I am using the **AutoGluon** library, which simplifies the machine learning process by automating tasks like model selection, hyperparameter tuning, and ensembling. This project allows for the application of machine learning concepts, feature engineering, and model optimization to compete in a global leaderboard.
 
-Students will create a Kaggle account if they do not already have one, download the Bike Sharing Demand dataset, and train a model using AutoGluon. They will then submit their initial results for a ranking.
+### Objective
 
-After they complete the first workflow, they will iterate on the process by trying to improve their score. This will be accomplished by adding more features to the dataset and tuning some of the hyperparameters available with AutoGluon.
+- **Predict the demand for bike rentals** using data from various sources (weather, time, season, etc.).
+- **Optimize the model** by adding more features and tuning hyperparameters to improve prediction accuracy.
+- Submit predictions for ranking and compete with other participants.
+- Document the process and evaluate which techniques provided the most significant improvement in performance.
 
-Finally they will submit all their work and write a report detailing which methods provided the best score improvement and why. A template of the report can be found [here](report-template.md).
+## Kaggle Competition
 
-To meet specifications, the project will require at least these files:
-* Jupyter notebook with code run to completion
-* HTML export of the jupyter notebbook
-* Markdown or PDF file of the report
+This project is part of the **Bike Sharing Demand competition**. The goal of the competition is to predict the number of bike rentals for a bike-sharing service based on weather and other features. The dataset includes columns such as:
+- **Season**: The season in which the observation was made.
+- **Year**: The year in which the observation was made.
+- **Month**: The month when the data was recorded.
+- **Hour**: The hour of the day (from 0 to 23).
+- **Weather data**: Information on temperature, humidity, and precipitation levels.
 
-Images or additional files needed to make your notebook or report complete can be also added.
+The dataset also includes the target column, **count**, which represents the number of bikes rented in a given hour.
 
-## Getting Started
-* Clone this template repository `git clone git@github.com:udacity/nd009t-c1-intro-to-ml-project-starter.git` into AWS Sagemaker Studio (or local development).
+## Key Steps of the Project
 
-<img src="img/sagemaker-studio-git1.png" alt="sagemaker-studio-git1.png" width="500"/>
-<img src="img/sagemaker-studio-git2.png" alt="sagemaker-studio-git2.png" width="500"/>
+### Data Exploration and Preprocessing
+- Load the data into a DataFrame and perform basic statistical analysis and visualizations to understand feature distributions and relationships.
+- Handle missing values and apply necessary transformations to the data (e.g., encoding categorical variables and scaling numerical features).
 
-* Proceed with the project within the [jupyter notebook](project-template.ipynb).
-* Visit the [Kaggle Bike Sharing Demand Competition](https://www.kaggle.com/c/bike-sharing-demand) page. There you will see the overall details about the competition including overview, data, code, discussion, leaderboard, and rules. You will primarily be focused on the data and ranking sections.
+### Train Initial Model Using AutoGluon
+- Use **AutoGluon** to automatically select the best model for the dataset, tune hyperparameters, and create an ensemble model for final predictions.
+- Submit the model’s predictions to Kaggle for ranking.
 
-### Dependencies
+### Feature Engineering and Model Improvement
+- Enhance the model by performing **feature engineering**:
+  - Add new features based on existing ones (e.g., creating interaction terms between time and weather).
+  - Apply advanced feature selection techniques to identify the most important predictors.
 
-```
-Python 3.7
-MXNet 1.8
-Pandas >= 1.2.4
-AutoGluon 0.2.0 
-```
+### Hyperparameter Tuning
+- Tune multiple hyperparameters of the AutoGluon model, such as:
+  - The number of trees in Random Forest and Gradient Boosting models.
+  - The learning rate and other settings for deep learning models.
+  - The number of layers and neurons for neural network models.
 
-### Installation
-For this project, it is highly recommended to use Sagemaker Studio from the course provided AWS workspace. This will simplify much of the installation needed to get started.
+### Final Submission
+- After optimizing the model, make final predictions and submit them to Kaggle for competition ranking.
 
-For local development, you will need to setup a jupyter lab instance.
-* Follow the [jupyter install](https://jupyter.org/install.html) link for best practices to install and start a jupyter lab instance.
-* If you have a python virtual environment already installed you can just `pip` install it.
-```
-pip install jupyterlab
-```
-* There are also docker containers containing jupyter lab from [Jupyter Docker Stacks](https://jupyter-docker-stacks.readthedocs.io/en/latest/index.html).
+### Report
+- Write a detailed report covering:
+  - The steps taken to improve the model.
+  - A discussion of feature engineering strategies and their impact.
+  - A comparison of the models tried and their final performances.
+  - Insights into the effectiveness of various techniques used to improve prediction accuracy.
 
-## Project Instructions
+## Dependencies
 
-1. Create an account with Kaggle.
-2. Download the Kaggle dataset using the kaggle python library.
-3. Train a model using AutoGluon’s Tabular Prediction and submit predictions to Kaggle for ranking.
-4. Use Pandas to do some exploratory analysis and create a new feature, saving new versions of the train and test dataset.
-5. Rerun the model and submit the new predictions for ranking.
-6. Tune at least 3 different hyperparameters from AutoGluon and resubmit predictions to rank higher on Kaggle.
-7. Write up a report on how improvements (or not) were made by either creating additional features or tuning hyperparameters, and why you think one or the other is the best approach to invest more time in.
+- **Python 3.7**
+- **AutoGluon 0.2.0**
+- **MXNet 1.8**
+- **Pandas >= 1.2.4**
+- **Matplotlib/Seaborn** (for data visualization)
 
 ## License
-[License](LICENSE.txt)
+
+This project is licensed under the **MIT License**.
